@@ -1,253 +1,157 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Design for Developers</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    body { margin: 0; font-family: 'Inter', sans-serif; }
+    header { background-color: #000; color: white; padding: 20px; display: flex; align-items: center; flex-wrap: wrap; }
+    nav { display: flex; flex-wrap: wrap; margin-left: auto; }
+    nav a {
+      margin-left: 10px; padding: 10px 15px; text-decoration: none; color: white;
+    }
+    nav a.active { background-color: white; color: black; }
+    .hero, .about, .features, .pricing, .contact { padding: 60px 20px; text-align: center; }
+    .hero { background-color: #000; color: white; }
+    .hero h1 { font-size: 2em; margin: 0; }
+    .hero p { color: #aaa; }
+    .section h2 { margin-bottom: 10px; }
+    .section p { max-width: 600px; margin: auto; line-height: 1.6; }
+    .btn { margin-top: 20px; padding: 10px 20px; background-color: #8da9ff; color: white; border: none; cursor: pointer; }
+    .testimonials { background-color: #8da9ff; color: white; position: relative; overflow: hidden; }
+    .testimonial-boxes {
+      display: flex; transition: transform 0.5s ease; width: 300%;
+    }
+    .testimonial {
+      background-color: white; color: black; padding: 20px; width: 100vw; box-sizing: border-box;
+      flex-shrink: 0; display: flex; justify-content: center; align-items: center; font-weight: bold;
+    }
+    .slider-controls { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 20px; }
+    .slider-controls button {
+      background-color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%;
+    }
+    .footer {
+      background-color: #111; color: white; padding: 40px 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;
+    }
+    .footer-column { flex: 1; min-width: 250px; }
+    .footer input, .footer textarea {
+      width: 100%; margin-bottom: 10px; padding: 10px; border: none; border-radius: 5px; box-sizing: border-box;
+    }
+    .footer .send-btn { background-color: #8da9ff; color: white; border: none; padding: 10px; cursor: pointer; width: 100%; }
+    .footer ul { list-style: none; padding: 0; }
+    .footer ul li { margin: 5px 0; }
+    .copyright { background-color: #222; color: #ccc; text-align: center; padding: 10px; font-size: 14px; }
+.about {
+  background-color: gold;
+}
+.features {
+background-color: grey;
+}
+.pricing {
+  background-color: blue;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-
-header {
-  background: #000;
-  color: #fff;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header .logo img {
-  height: 30px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-}
-
-nav a:hover {
-  background: #007bff;
-  border-radius: 5px;
-}
-
-.carousel {
-  background: #000;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.carousel h2 {
-  font-size: 24px;
-  color: white;
-}
-
-.carousel p {
-  font-size: 16px;
-  color: #333;
-}
-
-.carousel-dots {
-  margin-top: 20px;
-  font-size: 24px;
-  color: #aaa;
-}
-
-.content {
-  display: flex;
-  align-items: left;
-  padding: 40px 20px;
-  gap: 20px;
-}
-
-.content img {
-  width: 150px;
-  height: auto;
-}
-
-.content .text {
-  max-width: 600px;
-}
-
-.content button {
-  padding: 10px 15px;
-  margin-top: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.testimonials {
-  background: #4d8cff;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.testimonials .cards {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.testimonials .card {
-  background: white;
-  color: #333;
-  padding: 20px;
-  border-radius: 8px;
-  width: 200px;
-}
-
-footer {
-  background: #222;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 40px 20px;
-}
-
-footer h4 {
-  margin-bottom: 10px;
-}
-
-footer form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-footer input, footer textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-}
-
-footer button {
-  padding: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-footer a {
-  color: white;
-  text-decoration: none;
-}
-
-.bottom-bar img{
-     
-  height: 25px;
-  text-align: center;
-}
-.bottom-bar {
-  background: #111;
-  color: #ccc;
-  text-align: center;
-  padding: 10px;
-  font-size: 12px;
-}
+    @media (max-width: 768px) {
+      .testimonial { font-size: 14px; }
+      nav { justify-content: center; margin-top: 10px; }
+      .hero h1 { font-size: 1.5em; }
+      .section p { padding: 0 10px; }
+    }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="logo.png" alt=" ">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" style="height: 30px;">
     <nav>
-  
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Feature</a>
-        <a href="#">Pricing</a>
-        <a href="#">Contact us</a>
-      
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#features">Feature</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact Us</a>
     </nav>
   </header>
 
-
-  <div class="carousel">
-    <h2>design for Developers</h2>
-    <p>learn how to enhance your website.</p>
-    <div class="carousel-dots">● ● ●</div>
+  <div id="home" class="hero">
+    <h1>Design for Developers</h1>
+    <p>Learn how to enhance your website</p>
   </div>
 
-  <div class="content">
-    <img src="gooddesign.jpg" alt="Good Design">
-    <div class="text">
-      <h3>Learn web design</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
-      <button>Learn More</button>
+
+
+  <div id="about" class="about section">
+    <h2>About Us</h2>
+    <p>We are passionate developers and designers focused on delivering clean and modern web solutions. Our mission is to teach and empower others to build better websites.</p>
+  </div>
+
+  <div id="features" class="features section">
+    <h2>Feature</h2>
+    <p>Our platform offers a wide range of tools and templates, responsive layouts, and easy-to-follow guides to help you bring your web design ideas to life.</p>
+  </div>
+
+  <div id="pricing" class="pricing section">
+    <h2>Pricing</h2>
+    <p>Choose from flexible plans: Free, Pro, and Enterprise. Each plan is crafted to fit the needs of different users — from beginners to professionals.</p>
+  </div>
+
+  <div class="section testimonials">
+    <h2>Testimonials</h2>
+    <p>These are testimonials from clients</p>
+    <div class="slider-controls">
+      <button onclick="prevSlide()">❮</button>
+      <button onclick="nextSlide()">❯</button>
+    </div>
+    <div class="testimonial-boxes" id="slider">
+      <div class="testimonial">Testimonial 1 - took a galley of type and scr</div>
+      <div class="testimonial">Testimonial 2 - took a galley of type and scr</div>
+      <div class="testimonial">Testimonial 3 - took a galley of type and scr</div>
     </div>
   </div>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h3>Testimonials</h3>
-    <p>These are testimonials from client</p>
-    <div class="cards">
-      <div class="card">Lorem Ipsum is simply dummy text.</div>
-      <div class="card">Lorem Ipsum is simply dummy text.</div>
-      <div class="card">Lorem Ipsum is simply dummy text.</div>
+  <div id="contact" class="footer">
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <input type="text" placeholder="Your Name" />
+      <input type="email" placeholder="Your Email" />
+      <textarea rows="3" placeholder="Your Message"></textarea>
+      <button class="send-btn">Send</button>
     </div>
-  </section>
-
-  <!-- Contact and Sitemap -->
-  <footer>
-    <div class="contact">
-      <h4>Contact Us</h4>
-      <form>
-        <input type="text" placeholder="Your name">
-        <input type="email" placeholder="Your email">
-        <textarea placeholder="Your message"></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-
-    <div class="sitemap">
-      <h4>Sitemap</h4>
+    <div class="footer-column">
+      <h3>Sitemap</h3>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Feature</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#features">Feature</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </div>
-
-    <div class="contact-info">
-        <img src="email-re.png"  alt=" " height="30">
-      <p>uok@gmail.com</p>
-      <img src="phone-re.png" alt=" " height="30">
-      <p>+260 788 543 432</p>
+    <div class="footer-column">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" style="height: 30px;">
+      <p>📧 +250-0785587915</p>
+      <p>📞 company@gmail.com</p>
     </div>
-  </footer>
-
-  <div class="bottom-bar">
-    <p><img src="copyright.png" alt=" " > this is done by lecture of web design please do copyright</p>
   </div>
 
+  <div class="copyright">
+    © This is done by lecture of web design. Please, it's copyright.
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    function showSlide(index) {
+
+      const slider = document.getElementById("slider");
+      const totalSlides = slider.children.length;
+      if (index >= totalSlides) currentIndex = 0;
+      else if (index < 0) currentIndex = totalSlides - 1;
+      else currentIndex = index;
+      slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
+
+    }
+    function nextSlide() { showSlide(currentIndex + 1); }
+    function prevSlide() { showSlide(currentIndex - 1); }
+  </script>
 </body>
 </html>
